@@ -55,7 +55,7 @@ export function createSvgSpritePlugin(configOptions?: Config): Array<Plugin> {
       symbolId = symbolId.replace("[name]", basename);
     }
     if (options.symbolId.includes("[hash]")) {
-      let contentHash = await hash(id);
+      let contentHash = await hash(id + '-' + content);
       symbolId = symbolId.replace("[hash]", contentHash);
     }
 
